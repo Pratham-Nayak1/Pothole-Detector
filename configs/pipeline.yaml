@@ -1,0 +1,31 @@
+detector:
+  model_path: models/detector/best.pt
+  data_yaml: configs/data.yaml
+  confidence: 0.15
+  candidate_confidence: 0.03  # feed early weak candidates to tracker
+  class_confidence:
+    3: 0.05                   # potholes: detect simple/distant potholes early
+  nms_iou: 0.65
+  agnostic_nms: true
+  duplicate_iou: 0.50
+  duplicate_ios: 0.92
+  image_size: 800
+  device: auto
+severity:
+  enabled: true
+  model_path: models/severity/best_severity_model.pth
+  image_size: 224
+  confidence_threshold: 0.55
+  classes:
+  - low
+  - medium
+  - high
+output:
+  directory: outputs/inference
+  save_images: true
+  save_csv: true
+  save_json: true
+video:
+  tracker: configs/bytetrack_pothole.yaml   # project-local tuned tracker
+  severity_interval_frames: 10
+  codec: mp4v

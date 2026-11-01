@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+.pytest_cache/
+*.py[cod]
+venv/
+.venv/
+venv*/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Large temporary/intermediate model files and training runs
+runs/
+weights/
+wandb/
+mlruns/
+*.log
+*.onnx
+*.engine
+*.safetensors
+
+# Base pretrained downloads in root
+/*.pt
+
+# Allow production models in models/
+!models/detector/best.pt
+!models/severity/best_severity_model.pth
+
+# Full dataset (raw 7GB data excluded; sample data is provided in sample_data/)
+data/
+datasets/
+
+# Generated outputs
+outputs/*
+!outputs/.gitkeep
+tmp/
+temp/
+
+# Local Streamlit state and editor metadata
+.streamlit/
+
+# Editor and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Redundant copy; the canonical presentation is under docs/reports/
+/pothole_detection_presentation.pptx

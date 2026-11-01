@@ -1,0 +1,17 @@
+ultralytics
+opencv-python
+numpy
+pandas
+matplotlib
+torch
+torchvision
+Pillow
+scikit-learn
+PyYAML
+lap>=0.5.12
+streamlit
+pytest
+imageio
+imageio-ffmpeg
+python-docx
+python-pptx

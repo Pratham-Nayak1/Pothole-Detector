@@ -1,0 +1,12 @@
+﻿path: C:/Projects/AI/road-pothole-detection2/data
+
+train: images/train
+val: images/val
+
+nc: 4
+
+names:
+  0: Longitudinal Crack (D00)
+  1: Transverse Crack (D10)
+  2: Alligator Crack (D20)
+  3: Pothole (D40)

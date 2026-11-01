@@ -1,0 +1,20 @@
+# Ultralytics AGPL-3.0 License
+# Project-local ByteTrack config tuned for pothole detection
+# Copied from ultralytics defaults and lowered thresholds for earlier track creation
+
+tracker_type: bytetrack
+
+# Lower both thresholds so potholes are tracked from the first reliable detection
+# Default was 0.25 — at conf=0.1 potholes were missed by ByteTrack's first-stage
+track_high_thresh: 0.06   # match lowered YOLO pothole confidence
+track_low_thresh:  0.03   # recover weak/early frames
+new_track_thresh:  0.06   # create track immediately when pothole enters view
+
+# Keep lost tracks alive for longer (potholes can be briefly occluded by camera movement)
+track_buffer: 50          # (was 30) frames — helps with 30fps video
+
+# Similarity gate for data association
+match_thresh: 0.85        # slightly tighter to avoid merging two separate potholes
+
+# Fuse detection score with motion/IoU for matching
+fuse_score: True
